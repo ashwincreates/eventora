@@ -1,4 +1,5 @@
 "use client";
+import { createEvent } from "@/api/events";
 import { EventDialog } from "@/components/CreateEvent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,7 +30,11 @@ export default function HomePage({ events }: { events: Event[] }) {
           >
             Create Event
           </Button>
-          <EventDialog setOpen={setIsOpen} open={isOpen} />
+          <EventDialog
+            setOpen={setIsOpen}
+            open={isOpen}
+            onSubmit={(data) => createEvent(data)}
+          />
         </div>
       </section>
 
