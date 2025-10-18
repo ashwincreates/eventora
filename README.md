@@ -80,3 +80,27 @@ Attendees Table
   - email: str
   - event_id: int
 ```
+### API Endpoints
+
+```
+  - GET /events?offset=0&limit=10: Get all events
+
+  - POST /events: Create a new event
+  example body:
+  {
+    "name": "Event 2",
+    "description": "Event 2 description",
+    "start_time": "2022-01-02T00:00:00",
+    "end_time": "2022-01-02T01:00:00",
+    "max_capacity": 100
+  }
+
+  - POST /events/{event_id}/register: Create a new attendee for an event
+  example body:
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+  }
+
+  - GET /events/{event_id}/attendees?offset=0&limit=10: list all attendees for an event
+```
